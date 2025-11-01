@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_text"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="240dp" />
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="32dp"
+        android:textSize="54sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAC"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/ac_sign" />
+
+            <Button
+                android:id="@+id/buttonParentheses"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/parentheses_sign" />
+
+            <Button
+                android:id="@+id/buttonPercent"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/percent_sign" />
+
+            <Button
+                android:id="@+id/buttonDivision"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/division_sign" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSeven"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_seven" />
+
+            <Button
+                android:id="@+id/buttonEight"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_eight" />
+
+            <Button
+                android:id="@+id/buttonNine"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_nine" />
+
+            <Button
+                android:id="@+id/buttonMultiplication"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/multiplication_sign" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonFour"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_four" />
+
+            <Button
+                android:id="@+id/buttonFive"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_five" />
+
+            <Button
+                android:id="@+id/buttonSix"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_six" />
+
+            <Button
+                android:id="@+id/buttonMinus"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/minus_sign" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonOne"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_one" />
+
+            <Button
+                android:id="@+id/buttonTwo"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_two" />
+
+            <Button
+                android:id="@+id/buttonThree"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_three" />
+
+            <Button
+                android:id="@+id/buttonPlus"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/plus_sign" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--><View
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" /><-->
+
+            <Button
+                android:id="@+id/buttonZero"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/button_zero" />
+
+            <Button
+                android:id="@+id/buttonDot"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/dot_sign" />
+
+            <Button
+                android:id="@+id/buttonBackspace"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/backspace_sign" />
+
+            <Button
+                android:id="@+id/buttonEquals"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/equals_sign" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

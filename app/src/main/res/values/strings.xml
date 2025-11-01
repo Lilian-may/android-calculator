@@ -1,0 +1,30 @@
+<resources>
+    <!--> Main Information Strings <-->
+    <string name="app_name" translatable="false">Kuzmin kirov-chyort 1</string>
+    <string name="xml_version" translatable="false">1.0</string>
+    <string name="encoding" translatable="false">utf-8</string>
+
+    <string name="hello_text">Hello World!</string>
+
+    <!--> Main Control Strings <-->
+    <string name="button_one" translatable="false">1</string>
+    <string name="button_two" translatable="false">2</string>
+    <string name="button_three" translatable="false">3</string>
+    <string name="button_four" translatable="false">4</string>
+    <string name="button_five" translatable="false">5</string>
+    <string name="button_six" translatable="false">6</string>
+    <string name="button_seven" translatable="false">7</string>
+    <string name="button_eight" translatable="false">8</string>
+    <string name="button_nine" translatable="false">9</string>
+    <string name="button_zero" translatable="false">0</string>
+    <string name="ac_sign" translatable="false">AC</string>
+    <string name="parentheses_sign" translatable="false">( )</string>
+    <string name="percent_sign" translatable="false">%</string>
+    <string name="division_sign" translatable="false">&#247;</string>
+    <string name="multiplication_sign" translatable="false">&#215;</string>
+    <string name="minus_sign" translatable="false">&#8722;</string>
+    <string name="plus_sign" translatable="false">&#43;</string>
+    <string name="dot_sign">.</string>
+    <string name="backspace_sign">&#9003;</string>
+    <string name="equals_sign">&#61;</string>
+</resources>

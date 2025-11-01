@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_gradient_top">#788292</color>
+    <color name="dark_gradient_middle">#40414a</color>
+    <color name="dark_gradient_bottom">#1d1e24</color>
+    <color name="theme_dark_primary">#ffffff</color>
+    <color name="theme_dark_onPrimary">#788292</color>
+</resources>

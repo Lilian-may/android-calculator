@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Светлая тема -->
+    <style name="Base.Theme.KuzminKirovchyort1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/theme_light_primary</item>
+        <item name="colorOnPrimary">@color/theme_light_onPrimary</item>
+        <item name="android:windowBackground">@drawable/gradient_light</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.KuzminKirovchyort1" parent="Base.Theme.KuzminKirovchyort1" />
+</resources>
