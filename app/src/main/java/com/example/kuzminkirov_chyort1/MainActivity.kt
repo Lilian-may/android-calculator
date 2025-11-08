@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 expressionTextView.text = formatter.format(result)
             }
         } catch (e: Exception) {
-            expressionTextView.error = "@string/error_message $e"
+            expressionTextView.text = getString(R.string.error_message)
         }
     }
 }
