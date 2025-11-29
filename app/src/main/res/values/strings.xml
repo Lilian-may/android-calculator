@@ -4,8 +4,6 @@
     <string name="xml_version" translatable="false">1.0</string>
     <string name="encoding" translatable="false">utf-8</string>
 
-    <string name="hello_text">Hello World!</string>
-
     <!--> Main Control Strings <-->
     <string name="button_one" translatable="false">1</string>
     <string name="button_two" translatable="false">2</string>
