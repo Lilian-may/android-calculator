@@ -10,7 +10,7 @@
 
     <!-- night splash screen -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@drawable/splash_screen</item>
+        <item name="windowSplashScreenBackground">@color/theme_dark_onPrimary</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/calculator_vector</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.KuzminKirovchyort1</item>
     </style>
