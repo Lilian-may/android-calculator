@@ -27,4 +27,5 @@
     <string name="dot_sign">.</string>
     <string name="backspace_sign">&#9003;</string>
     <string name="equals_sign">&#61;</string>
+    <string name="error_message">Error</string>
 </resources>
