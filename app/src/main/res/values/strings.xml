@@ -16,6 +16,7 @@
     <string name="button_nine" translatable="false">9</string>
     <string name="button_zero" translatable="false">0</string>
     <string name="ac_sign" translatable="false">AC</string>
+    <string name="switch_engineer_mode">&#8596;</string>
     <string name="parentheses_sign" translatable="false">( )</string>
     <string name="percent_sign" translatable="false">%</string>
     <string name="division_sign" translatable="false">&#247;</string>

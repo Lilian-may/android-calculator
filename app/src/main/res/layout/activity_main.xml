@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="240dp" />
+        android:layout_marginTop="140dp" />
 
     <LinearLayout
         android:id="@+id/buttonsContainer"
@@ -28,6 +28,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonEngineerMode"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/switch_engineer_mode" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
 
         <LinearLayout
             style="?android:attr/buttonBarStyle"
