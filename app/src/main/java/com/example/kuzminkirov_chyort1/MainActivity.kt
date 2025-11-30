@@ -1,5 +1,6 @@
 package com.example.kuzminkirov_chyort1
 
+import android.R
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -10,6 +11,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import net.objecthunter.exp4j.ExpressionBuilder
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -58,6 +60,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.buttonAC).setOnClickListener(this)
         findViewById<Button>(R.id.buttonBackspace).setOnClickListener(this)
         findViewById<Button>(R.id.buttonEquals).setOnClickListener(this)
+
+        findViewById<Button>(R.id.buttonEngineerMode).setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -105,6 +109,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.buttonEquals -> {
                 calculateResult()
+            }
+
+            R.id.buttonEngineerMode -> {
+
             }
         }
     }

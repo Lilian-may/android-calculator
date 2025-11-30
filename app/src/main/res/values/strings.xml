@@ -4,7 +4,7 @@
     <string name="xml_version" translatable="false">1.0</string>
     <string name="encoding" translatable="false">utf-8</string>
 
-    <!--> Main Control Strings <-->
+    <!--> Main Control Strings activity_main <-->
     <string name="button_one" translatable="false">1</string>
     <string name="button_two" translatable="false">2</string>
     <string name="button_three" translatable="false">3</string>
@@ -27,4 +27,16 @@
     <string name="backspace_sign">&#9003;</string>
     <string name="equals_sign">&#61;</string>
     <string name="error_message">Error</string>
+    <string name="title_activity_engineer_mode">EngineerMode</string>
+
+    <!--> Main Control Strings activity_programmer_mode <-->
+    <string name="to_radians">RAD</string>
+    <string name="to_degrees">DEG</string>
+    <string name="mile">Mile</string>
+    <string name="kilometer">Kilometer</string>
+    <string name="meter">Meter</string>
+    <string name="pound">Pound</string>
+    <string name="binary">BIN</string>
+    <string name="decimal">DEC</string>
+    <string name="hexadecimal">HEX</string>
 </resources>
