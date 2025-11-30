@@ -1,6 +1,6 @@
 package com.example.kuzminkirov_chyort1
 
-import android.R
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -10,15 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.kuzminkirov_chyort1.R
 import net.objecthunter.exp4j.ExpressionBuilder
-
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var expressionTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Установка SplashScreen. Должна быть вызвана до super.onCreate()
         installSplashScreen()
 
         super.onCreate(savedInstanceState)
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.buttonBackspace).setOnClickListener(this)
         findViewById<Button>(R.id.buttonEquals).setOnClickListener(this)
 
-        findViewById<Button>(R.id.buttonEngineerMode).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonProgrammerMode).setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -111,8 +110,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 calculateResult()
             }
 
-            R.id.buttonEngineerMode -> {
-
+            R.id.buttonProgrammerMode -> {
+                startActivity(Intent(this, ProgrammerModeActivity::class.java))
             }
         }
     }

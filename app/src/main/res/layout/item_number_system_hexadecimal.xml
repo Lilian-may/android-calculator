@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hexadecimal_item"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingStart="4dp"
+    android:paddingEnd="24dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <View
+        android:id="@+id/hexadecimal_indicator"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="#33AFFF"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/hexadecimal_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/hexadecimal_indicator"
+        android:layout_marginStart="12dp"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="16sp"
+        android:text="@string/hexadecimal" />
+
+    <TextView
+        android:id="@+id/hexadecimal_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="16sp"
+        android:text="@string/zero_value" />
+
+</RelativeLayout>

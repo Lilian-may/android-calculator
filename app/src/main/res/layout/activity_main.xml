@@ -36,7 +36,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonEngineerMode"
+                android:id="@+id/buttonProgrammerMode"
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/switch_engineer_mode" />
 
