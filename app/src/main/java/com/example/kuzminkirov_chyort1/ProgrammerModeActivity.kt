@@ -36,6 +36,7 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
 
         setupClickListeners()
         updateNumberSystemUI()
+        updateButtonStates()
     }
 
     private fun setupClickListeners() {
@@ -46,6 +47,13 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.binary_item).setOnClickListener(this)
 
         // Buttons
+        findViewById<Button>(R.id.buttonA).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonB).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonC).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonD).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonE).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonF).setOnClickListener(this)
+
         findViewById<Button>(R.id.buttonZero).setOnClickListener(this)
         findViewById<Button>(R.id.buttonOne).setOnClickListener(this)
         findViewById<Button>(R.id.buttonTwo).setOnClickListener(this)
@@ -76,6 +84,13 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.octal_item -> setCurrentNumberSystem(NumberSystem.OCTAL)
             R.id.binary_item -> setCurrentNumberSystem(NumberSystem.BINARY)
 
+            R.id.buttonA -> appendToExpression("A")
+            R.id.buttonB -> appendToExpression("B")
+            R.id.buttonC -> appendToExpression("C")
+            R.id.buttonD -> appendToExpression("D")
+            R.id.buttonE -> appendToExpression("E")
+            R.id.buttonF -> appendToExpression("F")
+
             R.id.buttonZero -> appendToExpression("0")
             R.id.buttonOne -> appendToExpression("1")
             R.id.buttonTwo -> appendToExpression("2")
@@ -97,7 +112,7 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
                 val currentText = expressionTextView.text.toString()
                 val openParenCount = currentText.count { it == '(' }
                 val closeParenCount = currentText.count { it == ')' }
-                if (openParenCount > closeParenCount && currentText.lastOrNull()?.isDigit() == true) {
+                if (openParenCount > closeParenCount && currentText.lastOrNull()?.isLetterOrDigit() == true) {
                     appendToExpression(")")
                 } else {
                     appendToExpression("(")
@@ -145,7 +160,10 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setCurrentNumberSystem(system: NumberSystem) {
         currentNumberSystem = system
+        expressionTextView.text = ""
+        updateNumberDisplays(0)
         updateNumberSystemUI()
+        updateButtonStates()
     }
 
     private fun getRadix(system: NumberSystem): Int {
@@ -164,15 +182,49 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.binary_indicator).visibility = if (currentNumberSystem == NumberSystem.BINARY) View.VISIBLE else View.INVISIBLE
     }
 
+    private fun updateButtonStates() {
+        val radix = getRadix(currentNumberSystem)
+
+        findViewById<Button>(R.id.buttonA).isEnabled = radix >= 11
+        findViewById<Button>(R.id.buttonB).isEnabled = radix >= 12
+        findViewById<Button>(R.id.buttonC).isEnabled = radix >= 13
+        findViewById<Button>(R.id.buttonD).isEnabled = radix >= 14
+        findViewById<Button>(R.id.buttonE).isEnabled = radix >= 15
+        findViewById<Button>(R.id.buttonF).isEnabled = radix >= 16
+
+        findViewById<Button>(R.id.buttonTwo).isEnabled = radix >= 3
+        findViewById<Button>(R.id.buttonThree).isEnabled = radix >= 4
+        findViewById<Button>(R.id.buttonFour).isEnabled = radix >= 5
+        findViewById<Button>(R.id.buttonFive).isEnabled = radix >= 6
+        findViewById<Button>(R.id.buttonSix).isEnabled = radix >= 7
+        findViewById<Button>(R.id.buttonSeven).isEnabled = radix >= 8
+        findViewById<Button>(R.id.buttonEight).isEnabled = radix >= 9
+        findViewById<Button>(R.id.buttonNine).isEnabled = radix >= 10
+
+        findViewById<Button>(R.id.buttonDot).isEnabled = radix == 10
+    }
+
     private fun calculateResult() {
+        val expressionString = expressionTextView.text.toString()
+        if (expressionString.isEmpty()) return
+
         try {
-            val expressionString = expressionTextView.text.toString()
-            val expression = ExpressionBuilder(expressionString).build()
-            val result = expression.evaluate().toLong()
-            expressionTextView.text = result.toString(getRadix(currentNumberSystem))
+            val radix = getRadix(currentNumberSystem)
+            val decimalExpression = convertExpressionToDecimal(expressionString, radix)
+            val result = ExpressionBuilder(decimalExpression).build().evaluate().toLong()
+            expressionTextView.text = result.toString(radix).uppercase(Locale.getDefault())
             updateNumberDisplays(result)
         } catch (e: Exception) {
             expressionTextView.text = getString(R.string.error_message)
         }
+    }
+
+    private fun convertExpressionToDecimal(expression: String, radix: Int): String {
+        if (radix == 10) return expression
+        val tokens = expression.split("(?<=[+*/()])|(?=[+*/()])".toRegex()).filter { it.isNotBlank() }
+        val decimalTokens = tokens.map { token ->
+            token.toLongOrNull(radix)?.toString() ?: token
+        }
+        return decimalTokens.joinToString("")
     }
 }
