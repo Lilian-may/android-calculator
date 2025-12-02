@@ -53,17 +53,17 @@
             <Button
                 android:id="@+id/buttonA"
                 style="@style/CalculatorButtonStyle"
-                android:text="A" />
+                android:text="@string/button_a" />
 
             <Button
                 android:id="@+id/buttonB"
                 style="@style/CalculatorButtonStyle"
-                android:text="B" />
+                android:text="@string/button_b" />
 
             <Button
                 android:id="@+id/buttonC"
                 style="@style/CalculatorButtonStyle"
-                android:text="C" />
+                android:text="@string/button_c" />
 
         </LinearLayout>
 
@@ -76,17 +76,17 @@
             <Button
                 android:id="@+id/buttonD"
                 style="@style/CalculatorButtonStyle"
-                android:text="D" />
+                android:text="@string/button_d" />
 
             <Button
                 android:id="@+id/buttonE"
                 style="@style/CalculatorButtonStyle"
-                android:text="E" />
+                android:text="@string/button_e" />
 
             <Button
                 android:id="@+id/buttonF"
                 style="@style/CalculatorButtonStyle"
-                android:text="F" />
+                android:text="@string/button_f" />
 
             <Button
                 android:id="@+id/buttonAC"
@@ -206,6 +206,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/buttonDegToRad"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/deg_to_rad" />
+
+            <Button
+                android:id="@+id/buttonKmToMi"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/km_to_mi" />
 
             <Button
                 android:id="@+id/buttonZero"
@@ -221,6 +230,8 @@
                 android:id="@+id/buttonEquals"
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/equals_sign" />
+
+
         </LinearLayout>
 
     </LinearLayout>

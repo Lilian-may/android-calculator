@@ -75,6 +75,9 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.buttonBackspace).setOnClickListener(this)
         findViewById<Button>(R.id.buttonEquals).setOnClickListener(this)
         findViewById<Button>(R.id.buttonEngineerMode).setOnClickListener(this)
+
+        findViewById<Button>(R.id.buttonDegToRad).setOnClickListener(this)
+        findViewById<Button>(R.id.buttonKmToMi).setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
@@ -136,6 +139,8 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.buttonEngineerMode -> {
                 startActivity(Intent(this, MainActivity::class.java))
             }
+            R.id.buttonDegToRad -> convertDegreesToRadians()
+            R.id.buttonKmToMi -> convertKilometersToMiles()
         }
     }
 
@@ -221,10 +226,33 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun convertExpressionToDecimal(expression: String, radix: Int): String {
         if (radix == 10) return expression
+
         val tokens = expression.split("(?<=[+*/()])|(?=[+*/()])".toRegex()).filter { it.isNotBlank() }
         val decimalTokens = tokens.map { token ->
             token.toLongOrNull(radix)?.toString() ?: token
         }
         return decimalTokens.joinToString("")
+    }
+
+    private fun convertDegreesToRadians() {
+        try {
+            val degrees = expressionTextView.text.toString().toDouble()
+            val radians = Math.toRadians(degrees)
+            expressionTextView.text = radians.toString()
+            updateValueFromExpression()
+        } catch (e: NumberFormatException) {
+            expressionTextView.text = getString(R.string.error_message)
+        }
+    }
+
+    private fun convertKilometersToMiles() {
+        try {
+            val kilometers = expressionTextView.text.toString().toDouble()
+            val miles = kilometers * 0.621371
+            expressionTextView.text = miles.toString()
+            updateValueFromExpression()
+        } catch (e: NumberFormatException) {
+            expressionTextView.text = getString(R.string.error_message)
+        }
     }
 }

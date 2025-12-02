@@ -4,7 +4,9 @@
     <string name="xml_version" translatable="false">1.0</string>
     <string name="encoding" translatable="false">utf-8</string>
 
-    <!--> Main Control Strings activity_main <-->
+    <string name="hello_text">Hello World!</string>
+
+    <!--> Main Control Strings <-->
     <string name="button_one" translatable="false">1</string>
     <string name="button_two" translatable="false">2</string>
     <string name="button_three" translatable="false">3</string>
@@ -16,7 +18,6 @@
     <string name="button_nine" translatable="false">9</string>
     <string name="button_zero" translatable="false">0</string>
     <string name="ac_sign" translatable="false">AC</string>
-    <string name="switch_engineer_mode">&#8596;</string>
     <string name="parentheses_sign" translatable="false">( )</string>
     <string name="percent_sign" translatable="false">%</string>
     <string name="division_sign" translatable="false">&#247;</string>
@@ -27,20 +28,21 @@
     <string name="backspace_sign">&#9003;</string>
     <string name="equals_sign">&#61;</string>
     <string name="error_message">Error</string>
-    <string name="title_activity_engineer_mode">EngineerMode</string>
 
-    <!--> Main Control Strings activity_programmer_mode <-->
-    <string name="to_radians" translatable="false">RAD</string>
-    <string name="to_degrees" translatable="false">DEG</string>
-    <string name="mile" translatable="false">Mile</string>
-    <string name="kilometer" translatable="false">Kilometer</string>
-    <string name="meter" translatable="false">Meter</string>
-    <string name="pound" translatable="false">Pound</string>
-    <string name="binary" translatable="false">BIN</string>
-    <string name="octal" translatable="false">OCT</string>
-    <string name="decimal" translatable="false">DEC</string>
-    <string name="hexadecimal" translatable="false">HEX</string>
+    <!-- Programmer Mode -->
+    <string name="switch_engineer_mode">&#8596;</string>
+    <string name="button_a">A</string>
+    <string name="button_b">B</string>
+    <string name="button_c">C</string>
+    <string name="button_d">D</string>
+    <string name="button_e">E</string>
+    <string name="button_f">F</string>
+    <string name="deg_to_rad">Deg->Rad</string>
+    <string name="km_to_mi">Km->Mi</string>
+    <string name="hexadecimal">HEX</string>
+    <string name="decimal">DEC</string>
+    <string name="octal">OCT</string>
+    <string name="binary">BIN</string>
+    <string name="zero_value">0</string>
 
-    <!-- Other Strings -->
-    <string name="zero_value" translatable="false">0</string>
 </resources>
