@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var expressionTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Установка SplashScreen. Должна быть вызвана до super.onCreate()
         installSplashScreen()
 
         super.onCreate(savedInstanceState)
