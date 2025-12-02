@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<Button>(R.id.buttonBackspace).setOnClickListener(this)
         findViewById<Button>(R.id.buttonEquals).setOnClickListener(this)
 
+        // Исправлено: Назначаем обработчик для правильной кнопки
         findViewById<Button>(R.id.buttonProgrammerMode).setOnClickListener(this)
     }
 

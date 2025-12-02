@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".ProgrammerModeActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app.layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="180dp" />
+
     <include
         android:id="@+id/number_format_selector_container"
         layout="@layout/number_format_selector"
