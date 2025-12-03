@@ -30,19 +30,17 @@
     <string name="error_message">Error</string>
 
     <!-- Programmer Mode -->
-    <string name="switch_engineer_mode">&#8596;</string>
-    <string name="button_a">A</string>
-    <string name="button_b">B</string>
-    <string name="button_c">C</string>
-    <string name="button_d">D</string>
-    <string name="button_e">E</string>
-    <string name="button_f">F</string>
-    <string name="deg_to_rad">Deg->Rad</string>
-    <string name="km_to_mi">Km->Mi</string>
-    <string name="hexadecimal">HEX</string>
-    <string name="decimal">DEC</string>
-    <string name="octal">OCT</string>
-    <string name="binary">BIN</string>
-    <string name="zero_value">0</string>
+    <string name="switch_engineer_mode" translatable="false">&#8596;</string>
+    <string name="button_a" translatable="false">A</string>
+    <string name="button_b" translatable="false">B</string>
+    <string name="button_c" translatable="false">C</string>
+    <string name="button_d" translatable="false">D</string>
+    <string name="button_e" translatable="false">E</string>
+    <string name="button_f" translatable="false">F</string>
+    <string name="hexadecimal" translatable="false">HEX</string>
+    <string name="decimal" translatable="false">DEC</string>
+    <string name="octal" translatable="false">OCT</string>
+    <string name="binary" translatable="false">BIN</string>
+    <string name="zero_value" translatable="false">0</string>
 
 </resources>
