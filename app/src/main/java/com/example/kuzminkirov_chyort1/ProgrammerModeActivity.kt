@@ -157,7 +157,7 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun convertExpression(expression: String, targetRadix: Int): String {
-        val tokens = expression.split("(?<=[+*/()])|(?=[+*/()])".toRegex()).filter { it.isNotBlank() }
+        val tokens = expression.split("(?<=[+*/()%-])|(?=[+*/()%-])".toRegex()).filter { it.isNotBlank() }
         val currentRadix = getRadix(currentNumberSystem)
 
         val convertedTokens = tokens.map { token ->
@@ -198,33 +198,34 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun updateButtonStates() {
         val radix = getRadix(currentNumberSystem)
-        val isDec = currentNumberSystem == NumberSystem.DECIMAL
 
-        findViewById<Button>(R.id.buttonA).isEnabled = radix > 10
-        findViewById<Button>(R.id.buttonB).isEnabled = radix > 11
-        findViewById<Button>(R.id.buttonC).isEnabled = radix > 12
-        findViewById<Button>(R.id.buttonD).isEnabled = radix > 13
-        findViewById<Button>(R.id.buttonE).isEnabled = radix > 14
-        findViewById<Button>(R.id.buttonF).isEnabled = radix > 15
+        findViewById<Button>(R.id.buttonA).isEnabled = radix >= 11
+        findViewById<Button>(R.id.buttonB).isEnabled = radix >= 12
+        findViewById<Button>(R.id.buttonC).isEnabled = radix >= 13
+        findViewById<Button>(R.id.buttonD).isEnabled = radix >= 14
+        findViewById<Button>(R.id.buttonE).isEnabled = radix >= 15
+        findViewById<Button>(R.id.buttonF).isEnabled = radix >= 16
 
-        findViewById<Button>(R.id.buttonTwo).isEnabled = radix > 2
-        findViewById<Button>(R.id.buttonThree).isEnabled = radix > 3
-        findViewById<Button>(R.id.buttonFour).isEnabled = radix > 4
-        findViewById<Button>(R.id.buttonFive).isEnabled = radix > 5
-        findViewById<Button>(R.id.buttonSix).isEnabled = radix > 6
-        findViewById<Button>(R.id.buttonSeven).isEnabled = radix > 7
-        findViewById<Button>(R.id.buttonEight).isEnabled = radix > 8
-        findViewById<Button>(R.id.buttonNine).isEnabled = radix > 9
+        findViewById<Button>(R.id.buttonTwo).isEnabled = radix >= 3
+        findViewById<Button>(R.id.buttonThree).isEnabled = radix >= 4
+        findViewById<Button>(R.id.buttonFour).isEnabled = radix >= 5
+        findViewById<Button>(R.id.buttonFive).isEnabled = radix >= 6
+        findViewById<Button>(R.id.buttonSix).isEnabled = radix >= 7
+        findViewById<Button>(R.id.buttonSeven).isEnabled = radix >= 8
+        findViewById<Button>(R.id.buttonEight).isEnabled = radix >= 9
+        findViewById<Button>(R.id.buttonNine).isEnabled = radix >= 10
 
-        findViewById<Button>(R.id.buttonDot).isEnabled = isDec
+        findViewById<Button>(R.id.buttonDot).isEnabled = radix == 10
+        findViewById<Button>(R.id.buttonPercent).isEnabled = radix == 10
     }
 
     private fun calculateResult() {
         if (currentExpression.isEmpty()) return
 
         try {
-            val decimalExpression = convertExpressionToDecimal(currentExpression)
+            val decimalExpression = convertExpressionToDecimal(currentExpression, getRadix(currentNumberSystem))
             val result = ExpressionBuilder(decimalExpression).build().evaluate().toLong()
+
             currentExpression = result.toString(getRadix(currentNumberSystem)).uppercase(Locale.getDefault())
             updateNumberDisplays()
 
@@ -234,14 +235,30 @@ class ProgrammerModeActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun convertExpressionToDecimal(expression: String): String {
-        val radix = getRadix(currentNumberSystem)
+    private fun convertExpressionToDecimal(expression: String, radix: Int): String {
         if (radix == 10) return expression
 
-        val tokens = expression.split("(?<=[+*/()])|(?=[+*/()])".toRegex()).filter { it.isNotBlank() }
-        val decimalTokens = tokens.map { token ->
-            token.toLongOrNull(radix)?.toString() ?: token
+        val resultBuilder = StringBuilder()
+        var currentNumber = StringBuilder()
+
+        for (char in expression) {
+            if (char.isLetterOrDigit() && char.digitToIntOrNull(radix) != null) {
+                currentNumber.append(char)
+            } else {
+                if (currentNumber.isNotEmpty()) {
+                    val decimalValue = currentNumber.toString().toLong(radix)
+                    resultBuilder.append(decimalValue)
+                    currentNumber.clear()
+                }
+                resultBuilder.append(char)
+            }
         }
-        return decimalTokens.joinToString("")
+
+        if (currentNumber.isNotEmpty()) {
+            val decimalValue = currentNumber.toString().toLong(radix)
+            resultBuilder.append(decimalValue)
+        }
+
+        return resultBuilder.toString()
     }
 }

@@ -1,6 +1,6 @@
 <resources>
     <!--> Main Information Strings <-->
-    <string name="app_name" translatable="false">Kuzmin kirov-chyort 1</string>
+    <string name="app_name" translatable="false">Calculator</string>
     <string name="xml_version" translatable="false">1.0</string>
     <string name="encoding" translatable="false">utf-8</string>
 
