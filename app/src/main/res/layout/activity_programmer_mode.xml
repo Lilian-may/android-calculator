@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonEngineerMode"
-                style="@style/CalculatorButtonStyle"
-                android:text="@string/switch_engineer_mode" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/buttonA"
@@ -63,6 +63,11 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/buttonEngineerMode"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/switch_engineer_mode" />
+
+            <Button
                 android:id="@+id/buttonD"
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/button_d" />
@@ -77,10 +82,6 @@
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/button_f" />
 
-            <Button
-                android:id="@+id/buttonAC"
-                style="@style/CalculatorButtonStyle"
-                android:text="@string/ac_sign" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,6 +89,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAC"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/ac_sign" />
 
             <Button
                 android:id="@+id/buttonParentheses"
@@ -104,10 +110,6 @@
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/division_sign" />
 
-            <Button
-                android:id="@+id/buttonMultiplication"
-                style="@style/CalculatorButtonStyle"
-                android:text="@string/multiplication_sign" />
         </LinearLayout>
 
         <LinearLayout
@@ -132,9 +134,10 @@
                 android:text="@string/button_nine" />
 
             <Button
-                android:id="@+id/buttonMinus"
+                android:id="@+id/buttonMultiplication"
                 style="@style/CalculatorButtonStyle"
-                android:text="@string/minus_sign" />
+                android:text="@string/multiplication_sign" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -159,9 +162,10 @@
                 android:text="@string/button_six" />
 
             <Button
-                android:id="@+id/buttonPlus"
+                android:id="@+id/buttonMinus"
                 style="@style/CalculatorButtonStyle"
-                android:text="@string/plus_sign" />
+                android:text="@string/minus_sign" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -185,9 +189,10 @@
                 android:text="@string/button_three" />
 
             <Button
-                android:id="@+id/buttonBackspace"
+                android:id="@+id/buttonPlus"
                 style="@style/CalculatorButtonStyle"
-                android:text="@string/backspace_sign" />
+                android:text="@string/plus_sign" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -207,10 +212,14 @@
                 android:text="@string/dot_sign" />
 
             <Button
+                android:id="@+id/buttonBackspace"
+                style="@style/CalculatorButtonStyle"
+                android:text="@string/backspace_sign" />
+
+            <Button
                 android:id="@+id/buttonEquals"
                 style="@style/CalculatorButtonStyle"
                 android:text="@string/equals_sign" />
-
 
         </LinearLayout>
 
